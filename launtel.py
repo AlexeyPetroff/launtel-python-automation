@@ -27,7 +27,7 @@ def login(email, password):
     response = session.post(f'{BASE_URL}/login', data=data)
     response.raise_for_status()
     logging.info('Login successful')
-    service_id = int(re.search(r'onclick=\"pauseService\((\d+),', response.text).group(1))
+    service_id = int(re.search(r'onclick=\"modifyService\((\d+),', response.text).group(1))
     return session, service_id
 
 
